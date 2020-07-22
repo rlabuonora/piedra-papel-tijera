@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import Board from './Board';
-import Result from './Result';
 import { getWinner } from '../getWinner';
 
 class App extends React.Component {
