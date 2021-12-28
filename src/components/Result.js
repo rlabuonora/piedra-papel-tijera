@@ -51,12 +51,14 @@ const PlayAgain = (props) => {
 
 const Result = (props) => {
     return (
+        <>
         <div className="result">
             <PlayerResult choose={props.player} />
             <HouseResult choose={props.house} />
-          <PlayAgain winner={props.winner}
-                     handlePlayAgain={props.handlePlayAgain}/>
         </div>
+        <PlayAgain winner={props.winner}
+                    handlePlayAgain={props.handlePlayAgain}/>
+        </>
     )
 }
 

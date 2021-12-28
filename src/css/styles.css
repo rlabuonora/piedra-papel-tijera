@@ -53,7 +53,7 @@ body {
 
 .head {
     border: 2px solid hsl(217, 16%, 45%);
-    padding: 2em;
+    padding: 1em;
     border-radius: .4em;
     margin: 2em auto;
     display: flex;
@@ -64,33 +64,40 @@ body {
 
 }
 
+.head img {
+    height: 3.5rem;
+}
+
 .score {
     color: hsl(229, 64%, 46%);
     text-transform: uppercase;
     text-align: center;
     background-color: #fff;
-    border-radius: 1em;
-    font-size: 0.8rem;
+    border-radius: .6em;
+    font-size: 0.7rem;
     font-weight: 600;
+    letter-spacing: 1.5px;
+    height: 4rem;
     display: flex;
     flex-direction: column;
-    padding: 0 3em;
+    padding: 2em;
     justify-content: center;
-    gap: 1em;
+    gap: .2em;
 }
 
 
 .score span {
-    font-size: 4em;
+    font-size: 3em;
     color: hsl(229, 25%, 31%);
     line-height: .9em;
+    font-weight: 700;
 }
 
 
 
 /* 3 - Board Area */
 
-.board {
+.board, .result {
     font-size: 14px;
 /*     background: url(./images/bg-triangle.svg);
     background-repeat: no-repeat;
@@ -105,18 +112,25 @@ body {
 
 }
 
-.result {
-    flex: 1 1 80%;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    align-items: center;
 
+.playagain {
+    flex: 1;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.result div {}
 
-.board > *, .result > * {
-    flex: 1 1 50%;
+
+.result button, .board button {
+    overflow: hidden;
+    border-radius: 50%;
+    text-indent: 15em;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 10em;
+    width: 10em;
+    background-size: 3.5em 3.5em;
+    border-width: 16px
     
 }
 
@@ -125,18 +139,16 @@ body {
     flex-direction: column;
 }
 
+.board button, .you button, .house button {
+    margin: 0 auto;
+}
 
-.board button {
-    overflow: hidden;
-    border-radius: 50%;
-    text-indent: 15em;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    height: 9em;
-    width: 9em;
-    background-size: 3.5em 3.5em;
-    border-width: 16px
-    
+.result div, .board div {
+    flex: 1 1 50%;
+}
+
+.result {
+    width: 70%;
 }
 
 #paper {
@@ -162,61 +174,33 @@ button#stub {
     border: none;
 }
 
-.result {
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-}
 
-
-
-.result div {
-    text-align: center;
-}
-
-.result button {
-    text-indent: 15em;
-    overflow: hidden;
-}
-
-.result button {
-    border-radius: 50%;
-    text-indent: 15em;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 2.5em 2.5em;
-    border-width: 10px;
-    height: 5rem;
-    width: 5rem;
-}
-
-
-
-@media screen and (min-width: 52em) {
-    .result button {
-        background-size: 5em 5em;
-        border-width: 24px;
-        height: 14em;
-        width: 14em;
-    }
-}
-
-
-
-.playagain div {
-    font-size: 32px;
-}
 
 button:disabled {
     background-color: white;
 }
 
-.playagain button {
-    width: 12em;
-    height: 3em;
-    font-size: 12px;
+
+
+.you, .house {
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     letter-spacing: 1px;
-    border-radius: 4px;
+}
+
+.playagain {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.playagain button {
+    width: 10em;
+    height: 2.5em;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border-radius: 7px;
     text-indent: 0;
     background-color: #fff;
     border: none;
@@ -224,8 +208,6 @@ button:disabled {
     font-family: 'Barlow Semi Condensed', sans-serif;
     color: hsl(229, 25%, 31%);
 }
-
-
 
 
 /* Rules */
