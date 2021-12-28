@@ -1,10 +1,12 @@
 /* 1 - Page Styles */
-/* 2 - Header */
+/* 2 - Header Area */
+/* 3 - Board Area */
+
 /* 3 - Player Choose */
 /* 4 - House Choose */
 /* 5 - Result */
 /* 6 - Rules */
-/* 7 - Attribution */
+
 
 *,
 ::before,
@@ -12,87 +14,73 @@
     box-sizing: border-box;
 }
 
-body, html {
+html,
+body,
+p,
+h1,
+h2,
+h3 {
     margin: 0;
-    position: relative;
+    padding: 0;
+}
+
+body, html, .App, #root {
     height: 100%;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    text-transform: uppercase;
-    min-height: 640px;
-    color: #fff;
+   
 }
 
 
-.container {
+body {
     background: radial-gradient(at top center, hsl(214, 47%, 23%), hsl(237, 49%, 15%) );
-    height: 100%;
     background-repeat: no-repeat;
     background-size:cover;
-    position: absolute;
-    top: 0;
-    bottom: 10%;
-    left: 0;
-    right: 0;
-    height: 100%;
-    /* z-index: -2; */
+    padding-block: 1em;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    
+
 }
 
-
-.head {
-    position: absolute;
-    width: 18em;
-    left: calc(50% - 9em);
-    top: 2em;
-    background: transparent;
-    /* z-index: 3; */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100%;
 }
 
-@media screen and (min-width: 52em) {
-    .head {
-        width: 28em;
-        left: calc(50% - 14em);
-    }
-}
+/* Header Area */
 
 .head {
     border: 2px solid hsl(217, 16%, 45%);
-    padding: 2em 1em 2.8em 1em;
+    padding: 2em;
     border-radius: .4em;
-    background-image: url(./images/logo.svg);
-    background-repeat: no-repeat;
-    background-position: left 1em top 1em;
-    background-size: 85px 50px;
-}
-
-@media screen and (min-width: 52em) {
-    .head {
-        padding: 3em 1em 2.8em 1em;
-    }
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    min-width: 400px;
+    max-width: 700px;
 
 }
 
 .score {
-    position: absolute;
-    top: 1.2em;
-    right: 1.2em;
     color: hsl(229, 64%, 46%);
-    letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
-    font-size: .5em;
     background-color: #fff;
     border-radius: 1em;
-    padding: 1em 2.5em 1em 2.5em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3em;
+    justify-content: center;
+    gap: 1em;
 }
 
-@media screen and (min-width: 52em) {
-    .score {
-        font-size: .6em;
-    }
-}
 
 .score span {
-    display: block;
     font-size: 4em;
     color: hsl(229, 25%, 31%);
     line-height: .9em;
@@ -100,39 +88,43 @@ body, html {
 
 
 
-/* Board */
+/* 3 - Board Area */
+
 .board {
-    max-width: 400px;
-    min-width: 320px;
+    font-size: 14px;
+/*     background: url(./images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%; */
+    max-width: 80%;
     margin: 0 auto;
-    /* z-index: -1; */
-    padding: 12em 2em;
+    flex: 1 1 80%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    height: 90%;
-    font-size: 14px;
-    background: url(./images/bg-triangle.svg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 180px 180px;
-}
-
-@media screen and (min-width: 52em) {
-    .board {
-        max-width: 480px;
-        height: 95%;
-    }
-}
-
-.board div {
-    flex: 1 0 40%;
+    justify-content: space-between;
     text-align: center;
-    display: flex;
-    flex-direction: column;
+
+}
+
+.result {
+    flex: 1 1 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
     align-items: center;
 
 }
+
+.result div {}
+
+.board > *, .result > * {
+    flex: 1 1 50%;
+    
+}
+
+.you, .house {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .board button {
     overflow: hidden;
@@ -140,11 +132,11 @@ body, html {
     text-indent: 15em;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: 2.5em 2.5em;
-    border-width: 10px;
-    height: 7em;
-    width: 7em;
-    left: calc(50% - 3.5em);
+    height: 9em;
+    width: 9em;
+    background-size: 3.5em 3.5em;
+    border-width: 16px
+    
 }
 
 #paper {
@@ -170,83 +162,32 @@ button#stub {
     border: none;
 }
 
-@media screen and (min-width: 52em) {
-    .board button {
-        height: 9em;
-        width: 9em;
-    }
-}
-
-@media screen and (min-width: 52em) {
-    .board button {
-        background-size: 3.5em 3.5em;
-        border-width: 16px
-    }
-}
-
-.board span {
-    margin-top: 1em;
-    display: block;
-}
-
-
-/* House Choose */
-
-
-/* Result */
-
 .result {
-    min-width: 320px;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 12em 2em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 80%;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
 }
 
-@media screen and (min-width: 52em) {
-    .result {
-        max-width: 560px;
-        flex-wrap: nowrap;
-        height: 95%;
-    }
-}
 
 
 .result div {
-    flex: 1 0 40%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-@media screen and (min-width: 52em) {
-
-    .you {
-        order: 1;
-    }
-    .house {
-        order: 3;
-    }
-    .playagain {
-        order: 2;
-    }
 }
 
 .result button {
+    text-indent: 15em;
     overflow: hidden;
+}
+
+.result button {
     border-radius: 50%;
     text-indent: 15em;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 2.5em 2.5em;
     border-width: 10px;
-    height: 7em;
-    width: 7em;
+    height: 5rem;
+    width: 5rem;
 }
 
 
@@ -262,60 +203,9 @@ button#stub {
 
 
 
-.playagain {
-    margin-top: 2em;
-    margin-bottom: 1em;
-}
-
 .playagain div {
-    margin-bottom: .3em;
     font-size: 32px;
 }
-
-@media screen and (min-width: 52em) {
-    div.you, div.house {
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-
-    div.you span, div.house span {
-        font-size: 16px;
-    }
-
-    div.playagain div {
-        font-size: 32px;
-    }
-    .result span {
-        margin-bottom: 1em;
-    }
-
-    div.you {
-        margin-right: 2em;
-    }
-    div.house {
-        margin-left: 2em;
-    }
-    div.playagain {
-        justify-content: center;
-    }
-}
-
-
-@media screen and (min-width: 52em) {
-    .playagain div {
-        flex: 0 0;
-
-    }
-}
-
-.result span {
-    margin-top: 1em;
-    display: block;
-
-}
-
-
-
 
 button:disabled {
     background-color: white;
@@ -342,10 +232,6 @@ button:disabled {
 
 
 .rules {
-    position: absolute;
-    width: 20em;
-    bottom: 9em;
-    left: calc(50% - 10em);
     text-align: center;
 }
 
@@ -357,35 +243,12 @@ button:disabled {
     text-transform: uppercase;
     border: 1px solid hsl(217, 16%, 45%);
     color: #fff;
-    font-size: .6em;
+    font-size: 1rem;
     letter-spacing: 2px;
     padding: .8em 2em;
     border: 1px solid #fff;
-}
-
-@media screen and (min-width: 52em) {
-    .rules  {
-        position: absolute;
-        left: 75%;
-        bottom: 10em;
-    }
-
+    
 }
 
 
-/* Attribution */
-.attribution {
-    position: absolute;
-    width: 30em;
-    bottom: 5%;
-    left: calc(50% - 15em);
-    text-align: center;
-}
-.attribution {
-    color: #fff;
-    font-size: 11px;
-    text-align: center;
-}
-.attribution a {
-    color: hsl(228, 45%, 44%);
-}
+
