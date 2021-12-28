@@ -2,4 +2,4 @@
 
 Desafío para [Frontend Mentor](https://www.frontendmentor.io/).
 
-Miralo [acá](https://piedra-paper-tijera.netlify.app/)
+Miralo [acá](https://frontend-mentor-rock-paper-scissors.netlify.app/)
